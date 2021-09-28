@@ -1,0 +1,1 @@
+INSERT INTO service_user (id, username, password, email, mobile, created_at, updated_at) VALUES (13, "김루비", "4680", "ruby.kim@codestates.com", "010-4321-1111", now(), now());
