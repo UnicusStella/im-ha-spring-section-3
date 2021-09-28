@@ -86,28 +86,49 @@ public class LoginController {
         // 로그인 중인지 확인하는 메소드입니다.
         // 쿠키에 저장 된 토큰을 확인 하여 유저 데이터를 전달애햐합니다.
         // TODO :
-        Cookie[] cookies = null;
+        Cookie[] cookies = request.getCookies();
         String cookiesResult = "";
         try{
+            for (Cookie i : cookies){
+                if (i.getName().equals("refreshToken")){
+                    cookiesResult = i.getValue();
+                }
+            }
+
             // 쿠키에 키 값이 "jwt"인 쿠키에 값을 찾아냅니다.
 
 
         }catch (NullPointerException e){
-            return ResponseEntity.badRequest().body(null);// { "data" : null, "message" : "not authorized"} 해당 JSON 데이터가 body에 전달되어야 합니다.
+            return ResponseEntity.badRequest().body(new HashMap<>(){{
+                put("data", null);
+                put("message", "not authorized");
+            }});// { "data" : null, "message" : "not authorized"} 해당 JSON 데이터가 body에 전달되어야 합니다.
         }
 
-        Map<String, String> checkResult = null; // 토큰 유효성을 체크해야합니다.
+        Map<String, String> checkResult = loginService.CheckJWTToken(cookiesResult); // 토큰 유효성을 체크해야합니다.
 
         if(checkResult.get("email") != null){
 
-            ServiceUser userResult = null; // email을 기준으로 유저 정보를 찾아야 합니다.
+            ServiceUser userResult = loginService.FindUserEmail(checkResult.get("email")); // email을 기준으로 유저 정보를 찾아야 합니다.
 
-            return ResponseEntity.ok().body(null);
+            return ResponseEntity.ok().body(new HashMap<>(){{
+                put("data",new HashMap<>(){{
+                    put("userInfo",new HashMap<>(){{
+                        put("email",userResult.getEmail());
+                        put("username",userResult.getUsername());
+                        put("mobile",userResult.getMobile());
+                    }});
+                }});
+                put("message","ok");
+            }});
                 // { "data" : { "userInfo" : { "email" : "유저 이메일", "username" : "유저 이름", "mobile" : "유저 모바일 번호" } }, "message" : "ok" }
                 // 위와 같은 형태에 JSON 데이터가 body에 전달되어야 합니다.
 
         }else{
-            return ResponseEntity.badRequest().body(null);
+            return ResponseEntity.badRequest().body(new HashMap<>(){{
+                put("data",null);
+                put("message",checkResult.get("message"));
+            }});
                 // { "data" : null, "message" : "에러 내용" }
                 // 위와 같은 형태에 JSON 데이터가 body에 전달되어야 합니다.
 
