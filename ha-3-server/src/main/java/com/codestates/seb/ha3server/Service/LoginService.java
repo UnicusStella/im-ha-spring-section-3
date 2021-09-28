@@ -57,29 +57,50 @@ public class LoginService {
         // 토큰에 유효시간은 24시간입니다.
         // SIGN_KEY를 사용해야합니다.
         //TODO :
-        return null;
+        Date now = new Date();
+        return Jwts.builder()
+                .setHeaderParam(Header.TYPE,Header.JWT_TYPE)
+                .setIssuer("fresh")
+                .setIssuedAt(now)
+                .claim("email",user.getEmail())
+                .claim("password",user.getPassword())
+                .signWith(SignatureAlgorithm.HS256,SIGN_KEY)
+                .compact();
     }
 
     public Map<String, String> CheckJWTToken(String key){
         // 매개변수 key를 통해 전달 되는 토큰 값에 유효성을 체크하여 결과를 리턴합니다.
         try{
             //TODO :
-            Claims claims = null;
+            Claims claims = Jwts.parser().setSigningKey(SIGN_KEY)
+                    .parseClaimsJws(key)
+                    .getBody();
 
-            String userEmail = null;
-            return null;
+            String userEmail = (String)claims.get("email");
+            return new HashMap<>(){{
+                put("email",userEmail);
+                put("message","ok");
+            }};
             // { "email" : 유저 이메일, "message" : "ok" }
             // 위와 같은 형태에 데이터가 리턴 되어야 합니다.
 
-        }catch(){ // 알맞은 에러 객체를 catch() 안에 선언해야합니다.
+        }catch(ExpiredJwtException e){ // 알맞은 에러 객체를 catch() 안에 선언해야합니다.
 
-            return null;
+            return new HashMap<>(){{
+                put("email",null);
+                put("message","토큰 시간이 만료 되었습니다.");
+            }};
             // { "email" : null, "message" : "토큰 시간이 만료 되었습니다." }
             // 위와 같은 형태에 데이터가 리턴 되어야 합니다.
 
-        }catch(){ // 알맞은 에러 객체를 catch() 안에 선언해야합니다.
+        }catch(JwtException e){ // 알맞은 에러 객체를 catch() 안에 선언해야합니다.
 
-            return null;
+            return new HashMap<>(){
+                {
+                    put("email", null);
+                    put("message", "토큰이 유효하지 않습니다.");
+                }
+            };
             // { "email" : null, "message" : "토큰이 유효하지 않습니다." }
             // 위와 같은 형태에 데이터가 리턴 되어야 합니다.
         }

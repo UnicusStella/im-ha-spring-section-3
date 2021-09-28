@@ -18,6 +18,9 @@ import java.util.Map;
 @CrossOrigin("https://localhost:3000")
 public class LoginController {
 
+    private final static Long ACCESS_TIME = 15L;
+    private final static Long REFRESH_TIME = 1800L;
+
     private final LoginService loginService;
 
     @Autowired
@@ -30,6 +33,7 @@ public class LoginController {
         // 회원가입 요청을 위한 메소드입니다.
         // loginSignUp 객체에 내용을 사용하여 DB > service_user 테이블에 유저 정보를 저장하세요.
         // TODO :
+
         if (false){ // loginSignUp 객체 내에 모든 필드 값이 null이 아닌지 체크해야합니다.
             return ResponseEntity.badRequest().body("insufficient parameters supplied");
         }
@@ -52,12 +56,13 @@ public class LoginController {
             // DB에 저장 된 유저정보를 확인하여 토큰을 발행하는 메소드입니다.
             // loginSignin를 통해 전달 된 정보를 DB > service_user 테이블에 유저 정보와 비교 후 유효한 유저일 경우 토큰을 생성하여 쿠키를 통해 클라이언트에 전달해야합니다. (cookie key -> "jwt")
             // TODO :
-            ServiceUser user = null; // 유저 정보를 체크해야 합니다.
+            ServiceUser user = loginService.FindUserData(loginSignin); // 유저 정보를 체크해야 합니다.
             if(user == null){
                 return ResponseEntity.badRequest().body("invalid user");
             }
 
-            Cookie cookie = null; // 토큰을 생성하여 쿠키를 통해 클라이언트에 전달 되어야 합니다.
+//            Cookie cookie = new Cookie("refreshToken",loginService.CreateJWTToken(user, REFRESH_TIME)); // 토큰을 생성하여 쿠키를 통해 클라이언트에 전달 되어야 합니다.
+
 
             return ResponseEntity.ok().body(null); // { "message" : "ok"} 해당 JSON 데이터가 body에 전달되어야 합니다.
 
