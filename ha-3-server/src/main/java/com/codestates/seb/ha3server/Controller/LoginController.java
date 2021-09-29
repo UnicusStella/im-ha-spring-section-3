@@ -35,14 +35,18 @@ public class LoginController {
             return ResponseEntity.badRequest().body("insufficient parameters supplied");
         }
 
-        ServiceUser user = null; // 유저 정보를 저장해야합니다.
+        ServiceUser user = loginService.CreateUserData(loginSignUp); // 유저 정보를 저장해야합니다.
         if(user == null) {
             return ResponseEntity.badRequest().body("email exists");
         }
 
-        Cookie cookie = null; // jwt 토큰을 생성하여 쿠키를 통해 클라이언트에 전달해야 합니다. (cookie key -> "jwt")
+        Cookie cookie = new Cookie("refreshToken",loginService.CreateJWTToken(user)); // jwt 토큰을 생성하여 쿠키를 통해 클라이언트에 전달해야 합니다. (cookie key -> "jwt")
 
-        return ResponseEntity.ok().body(null);  // 유저 정보가 저장 되고 토큰 값이 쿠키를 통해 정상적으로 전달이 되면 아래 JSON 내용이 body에 전달되어야 합니다.
+        response.addCookie(cookie);
+
+        return ResponseEntity.ok().body(new HashMap<>(){{
+            put("message","ok");
+        }});  // 유저 정보가 저장 되고 토큰 값이 쿠키를 통해 정상적으로 전달이 되면 아래 JSON 내용이 body에 전달되어야 합니다.
                                                 // { "message" : "ok"}
 
     }
@@ -61,7 +65,9 @@ public class LoginController {
             Cookie cookie = new Cookie("refreshToken",loginService.CreateJWTToken(user)); // 토큰을 생성하여 쿠키를 통해 클라이언트에 전달 되어야 합니다.
             response.addCookie(cookie);
 
-            return ResponseEntity.ok().body(null); // { "message" : "ok"} 해당 JSON 데이터가 body에 전달되어야 합니다.
+            return ResponseEntity.ok().body(new HashMap<>(){{
+                put("message","ok");
+            }}); // { "message" : "ok"} 해당 JSON 데이터가 body에 전달되어야 합니다.
 
         }catch (Exception e){
             return ResponseEntity.badRequest().body("error : " + e);
@@ -73,7 +79,11 @@ public class LoginController {
         // 유저 로그아웃 기능을 수행하는 메소드입니다.
         // 해당 요청이 들어 왔을 시, 클라이언트에 jwt 키 값을 가진 쿠키가 제거 되어야합니다.
         // TODO :
-        Cookie cookie = null;
+        Cookie cookie = new Cookie("delete",null);
+        cookie.setMaxAge(0);
+        cookie.setPath("/");
+
+        response.addCookie(cookie);
 
         return ResponseEntity.ok().body("Logged out successfully");
     }

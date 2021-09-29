@@ -1,0 +1,257 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 10,
+    "passes": 2,
+    "pending": 0,
+    "failures": 8,
+    "start": "2021-09-28T09:25:00.294Z",
+    "end": "2021-09-28T09:25:00.635Z",
+    "duration": 341
+  },
+  "tests": [
+    {
+      "title": "🧩 회원가입 버튼을 눌렀을 시 성공적으로 회원가입이 되어야합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Signup 페이지\n================\n 🧩 회원가입 버튼을 눌렀을 시 성공적으로 회원가입이 되어야합니다.",
+      "duration": 34,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected 0 to deeply equal 1",
+        "showDiff": true,
+        "actual": "0",
+        "expected": "1",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected 0 to deeply equal 1\n    at Timeout._onTimeout (__tests__/client.test.js:61:34)\n    at listOnTimeout (node:internal/timers:557:17)\n    at processTimers (node:internal/timers:500:7)",
+        "uncaught": true
+      }
+    },
+    {
+      "title": "🧩 유저 정보가 충분하지 않은 상태에서 회원가입 버튼을 누를 시 에러메시지가 나타나야 합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Signup 페이지\n================\n 🧩 유저 정보가 충분하지 않은 상태에서 회원가입 버튼을 누를 시 에러메시지가 나타나야 합니다.",
+      "duration": 4,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected '' to deeply equal '모든 항목은 필수입니다'",
+        "showDiff": true,
+        "actual": "",
+        "expected": "모든 항목은 필수입니다",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected '' to deeply equal '모든 항목은 필수입니다'\n    at Timeout._onTimeout (__tests__/client.test.js:81:54)\n    at listOnTimeout (node:internal/timers:557:17)\n    at processTimers (node:internal/timers:500:7)",
+        "uncaught": true
+      }
+    },
+    {
+      "title": "🧩 유저 정보가 충분하지 않은 상태라면 POST 요청이 전송되지 않아야 합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Signup 페이지\n================\n 🧩 유저 정보가 충분하지 않은 상태라면 POST 요청이 전송되지 않아야 합니다.",
+      "duration": 4,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🧩 로그인 버튼 클릭 시 성공적으로 로그인되어야 합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Login 테스트\n===============\n 🧩 로그인 버튼 클릭 시 성공적으로 로그인되어야 합니다.",
+      "duration": 8,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected 0 to deeply equal 1",
+        "showDiff": true,
+        "actual": "0",
+        "expected": "1",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected 0 to deeply equal 1\n    at Timeout._onTimeout (__tests__/client.test.js:130:34)\n    at listOnTimeout (node:internal/timers:557:17)\n    at processTimers (node:internal/timers:500:7)",
+        "uncaught": true
+      }
+    },
+    {
+      "title": "🧩 email 또는 password가 채워지지 않았다면 로그인 버튼 클릭 시 에러메시지가 나타나야 합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Login 테스트\n===============\n 🧩 email 또는 password가 채워지지 않았다면 로그인 버튼 클릭 시 에러메시지가 나타나야 합니다.",
+      "duration": 3,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected '' to deeply equal '이메일과 비밀번호를 입력하세요'",
+        "showDiff": true,
+        "actual": "",
+        "expected": "이메일과 비밀번호를 입력하세요",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected '' to deeply equal '이메일과 비밀번호를 입력하세요'\n    at Timeout._onTimeout (__tests__/client.test.js:147:54)\n    at listOnTimeout (node:internal/timers:557:17)\n    at processTimers (node:internal/timers:500:7)",
+        "uncaught": true
+      }
+    },
+    {
+      "title": "🧩 email 또는 password가 채워지지 않았다면 로그인 버튼 클릭 시 POST 요청이 일어나지 않아야합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Login 테스트\n===============\n 🧩 email 또는 password가 채워지지 않았다면 로그인 버튼 클릭 시 POST 요청이 일어나지 않아야합니다.",
+      "duration": 3,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🧩 로그인 후 handleResponseSuccess 함수가 호출되어야 합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Login 테스트\n===============\n 🧩 로그인 후 handleResponseSuccess 함수가 호출되어야 합니다.",
+      "duration": 212,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected 0 to deeply equal 1",
+        "showDiff": true,
+        "actual": "0",
+        "expected": "1",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected 0 to deeply equal 1\n    at Timeout._onTimeout (__tests__/client.test.js:194:39)\n    at listOnTimeout (node:internal/timers:557:17)\n    at processTimers (node:internal/timers:500:7)",
+        "uncaught": true
+      }
+    },
+    {
+      "title": "🧩 userinfo가 있다면 유저의 정보가 렌더되어야 합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Mypage 테스트\n================\n 🧩 userinfo가 있다면 유저의 정보가 렌더되어야 합니다.",
+      "duration": 5,
+      "currentRetry": 0,
+      "err": {
+        "stack": "ReferenceError: handleLogout is not defined\n    at Mypage (src/pages/Mypage.js:15:53)\n    at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14803:18)\n    at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17482:13)\n    at beginWork (node_modules/react-dom/cjs/react-dom.development.js:18596:16)\n    at Object.invokeGuardedCallbackImpl (node_modules/react-dom/cjs/react-dom.development.js:113:10)\n    at invokeGuardedCallback (node_modules/react-dom/cjs/react-dom.development.js:292:31)\n    at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23203:7)\n    at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22157:12)\n    at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22130:22)\n    at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:21756:9)\n    at scheduleUpdateOnFiber (node_modules/react-dom/cjs/react-dom.development.js:21188:7)\n    at updateContainer (node_modules/react-dom/cjs/react-dom.development.js:24373:3)\n    at /Users/stella/Documents/HA/im-ha-spring-section-3/ha-section-3-client/node_modules/react-dom/cjs/react-dom.development.js:24758:7\n    at unbatchedUpdates (node_modules/react-dom/cjs/react-dom.development.js:21903:12)\n    at legacyRenderSubtreeIntoContainer (node_modules/react-dom/cjs/react-dom.development.js:24757:5)\n    at Object.render (node_modules/react-dom/cjs/react-dom.development.js:24840:10)\n    at fn (node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:488:26)\n    at /Users/stella/Documents/HA/im-ha-spring-section-3/ha-section-3-client/node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:405:37\n    at batchedUpdates$1 (node_modules/react-dom/cjs/react-dom.development.js:21856:12)\n    at Object.act (node_modules/react-dom/cjs/react-dom-test-utils.development.js:929:14)\n    at wrapAct (node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:405:13)\n    at Object.render (node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:474:16)\n    at new ReactWrapper (node_modules/enzyme/src/ReactWrapper.js:115:16)\n    at mount (node_modules/enzyme/src/mount.js:10:10)\n    at Context.<anonymous> (__tests__/client.test.js:213:23)\n    at processImmediate (node:internal/timers:464:21)",
+        "message": "handleLogout is not defined"
+      }
+    },
+    {
+      "title": "🧩 userinfo가 없다면 아무 정보도 렌더되지 않아야합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Mypage 테스트\n================\n 🧩 userinfo가 없다면 아무 정보도 렌더되지 않아야합니다.",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "stack": "ReferenceError: handleLogout is not defined\n    at Mypage (src/pages/Mypage.js:15:53)\n    at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14803:18)\n    at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17482:13)\n    at beginWork (node_modules/react-dom/cjs/react-dom.development.js:18596:16)\n    at Object.invokeGuardedCallbackImpl (node_modules/react-dom/cjs/react-dom.development.js:113:10)\n    at invokeGuardedCallback (node_modules/react-dom/cjs/react-dom.development.js:292:31)\n    at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23203:7)\n    at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22157:12)\n    at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22130:22)\n    at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:21756:9)\n    at scheduleUpdateOnFiber (node_modules/react-dom/cjs/react-dom.development.js:21188:7)\n    at updateContainer (node_modules/react-dom/cjs/react-dom.development.js:24373:3)\n    at /Users/stella/Documents/HA/im-ha-spring-section-3/ha-section-3-client/node_modules/react-dom/cjs/react-dom.development.js:24758:7\n    at unbatchedUpdates (node_modules/react-dom/cjs/react-dom.development.js:21903:12)\n    at legacyRenderSubtreeIntoContainer (node_modules/react-dom/cjs/react-dom.development.js:24757:5)\n    at Object.render (node_modules/react-dom/cjs/react-dom.development.js:24840:10)\n    at fn (node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:488:26)\n    at /Users/stella/Documents/HA/im-ha-spring-section-3/ha-section-3-client/node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:405:37\n    at batchedUpdates$1 (node_modules/react-dom/cjs/react-dom.development.js:21856:12)\n    at Object.act (node_modules/react-dom/cjs/react-dom-test-utils.development.js:929:14)\n    at wrapAct (node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:405:13)\n    at Object.render (node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:474:16)\n    at new ReactWrapper (node_modules/enzyme/src/ReactWrapper.js:115:16)\n    at mount (node_modules/enzyme/src/mount.js:10:10)\n    at Context.<anonymous> (__tests__/client.test.js:224:23)\n    at processImmediate (node:internal/timers:464:21)",
+        "message": "handleLogout is not defined"
+      }
+    },
+    {
+      "title": "🧩 로그아웃 버튼에 핸들러가 props로 존재하도록 렌더되어야 합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Mypage 테스트\n================\n 🧩 로그아웃 버튼에 핸들러가 props로 존재하도록 렌더되어야 합니다.",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {
+        "stack": "ReferenceError: handleLogout is not defined\n    at Mypage (src/pages/Mypage.js:15:53)\n    at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14803:18)\n    at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17482:13)\n    at beginWork (node_modules/react-dom/cjs/react-dom.development.js:18596:16)\n    at Object.invokeGuardedCallbackImpl (node_modules/react-dom/cjs/react-dom.development.js:113:10)\n    at invokeGuardedCallback (node_modules/react-dom/cjs/react-dom.development.js:292:31)\n    at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23203:7)\n    at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22157:12)\n    at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22130:22)\n    at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:21756:9)\n    at scheduleUpdateOnFiber (node_modules/react-dom/cjs/react-dom.development.js:21188:7)\n    at updateContainer (node_modules/react-dom/cjs/react-dom.development.js:24373:3)\n    at /Users/stella/Documents/HA/im-ha-spring-section-3/ha-section-3-client/node_modules/react-dom/cjs/react-dom.development.js:24758:7\n    at unbatchedUpdates (node_modules/react-dom/cjs/react-dom.development.js:21903:12)\n    at legacyRenderSubtreeIntoContainer (node_modules/react-dom/cjs/react-dom.development.js:24757:5)\n    at Object.render (node_modules/react-dom/cjs/react-dom.development.js:24840:10)\n    at fn (node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:488:26)\n    at /Users/stella/Documents/HA/im-ha-spring-section-3/ha-section-3-client/node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:405:37\n    at batchedUpdates$1 (node_modules/react-dom/cjs/react-dom.development.js:21856:12)\n    at Object.act (node_modules/react-dom/cjs/react-dom-test-utils.development.js:929:14)\n    at wrapAct (node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:405:13)\n    at Object.render (node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:474:16)\n    at new ReactWrapper (node_modules/enzyme/src/ReactWrapper.js:115:16)\n    at mount (node_modules/enzyme/src/mount.js:10:10)\n    at Context.<anonymous> (__tests__/client.test.js:233:23)\n    at processImmediate (node:internal/timers:464:21)",
+        "message": "handleLogout is not defined"
+      }
+    }
+  ],
+  "pending": [],
+  "failures": [
+    {
+      "title": "🧩 회원가입 버튼을 눌렀을 시 성공적으로 회원가입이 되어야합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Signup 페이지\n================\n 🧩 회원가입 버튼을 눌렀을 시 성공적으로 회원가입이 되어야합니다.",
+      "duration": 34,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected 0 to deeply equal 1",
+        "showDiff": true,
+        "actual": "0",
+        "expected": "1",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected 0 to deeply equal 1\n    at Timeout._onTimeout (__tests__/client.test.js:61:34)\n    at listOnTimeout (node:internal/timers:557:17)\n    at processTimers (node:internal/timers:500:7)",
+        "uncaught": true
+      }
+    },
+    {
+      "title": "🧩 유저 정보가 충분하지 않은 상태에서 회원가입 버튼을 누를 시 에러메시지가 나타나야 합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Signup 페이지\n================\n 🧩 유저 정보가 충분하지 않은 상태에서 회원가입 버튼을 누를 시 에러메시지가 나타나야 합니다.",
+      "duration": 4,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected '' to deeply equal '모든 항목은 필수입니다'",
+        "showDiff": true,
+        "actual": "",
+        "expected": "모든 항목은 필수입니다",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected '' to deeply equal '모든 항목은 필수입니다'\n    at Timeout._onTimeout (__tests__/client.test.js:81:54)\n    at listOnTimeout (node:internal/timers:557:17)\n    at processTimers (node:internal/timers:500:7)",
+        "uncaught": true
+      }
+    },
+    {
+      "title": "🧩 로그인 버튼 클릭 시 성공적으로 로그인되어야 합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Login 테스트\n===============\n 🧩 로그인 버튼 클릭 시 성공적으로 로그인되어야 합니다.",
+      "duration": 8,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected 0 to deeply equal 1",
+        "showDiff": true,
+        "actual": "0",
+        "expected": "1",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected 0 to deeply equal 1\n    at Timeout._onTimeout (__tests__/client.test.js:130:34)\n    at listOnTimeout (node:internal/timers:557:17)\n    at processTimers (node:internal/timers:500:7)",
+        "uncaught": true
+      }
+    },
+    {
+      "title": "🧩 email 또는 password가 채워지지 않았다면 로그인 버튼 클릭 시 에러메시지가 나타나야 합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Login 테스트\n===============\n 🧩 email 또는 password가 채워지지 않았다면 로그인 버튼 클릭 시 에러메시지가 나타나야 합니다.",
+      "duration": 3,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected '' to deeply equal '이메일과 비밀번호를 입력하세요'",
+        "showDiff": true,
+        "actual": "",
+        "expected": "이메일과 비밀번호를 입력하세요",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected '' to deeply equal '이메일과 비밀번호를 입력하세요'\n    at Timeout._onTimeout (__tests__/client.test.js:147:54)\n    at listOnTimeout (node:internal/timers:557:17)\n    at processTimers (node:internal/timers:500:7)",
+        "uncaught": true
+      }
+    },
+    {
+      "title": "🧩 로그인 후 handleResponseSuccess 함수가 호출되어야 합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Login 테스트\n===============\n 🧩 로그인 후 handleResponseSuccess 함수가 호출되어야 합니다.",
+      "duration": 212,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected 0 to deeply equal 1",
+        "showDiff": true,
+        "actual": "0",
+        "expected": "1",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected 0 to deeply equal 1\n    at Timeout._onTimeout (__tests__/client.test.js:194:39)\n    at listOnTimeout (node:internal/timers:557:17)\n    at processTimers (node:internal/timers:500:7)",
+        "uncaught": true
+      }
+    },
+    {
+      "title": "🧩 userinfo가 있다면 유저의 정보가 렌더되어야 합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Mypage 테스트\n================\n 🧩 userinfo가 있다면 유저의 정보가 렌더되어야 합니다.",
+      "duration": 5,
+      "currentRetry": 0,
+      "err": {
+        "stack": "ReferenceError: handleLogout is not defined\n    at Mypage (src/pages/Mypage.js:15:53)\n    at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14803:18)\n    at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17482:13)\n    at beginWork (node_modules/react-dom/cjs/react-dom.development.js:18596:16)\n    at Object.invokeGuardedCallbackImpl (node_modules/react-dom/cjs/react-dom.development.js:113:10)\n    at invokeGuardedCallback (node_modules/react-dom/cjs/react-dom.development.js:292:31)\n    at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23203:7)\n    at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22157:12)\n    at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22130:22)\n    at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:21756:9)\n    at scheduleUpdateOnFiber (node_modules/react-dom/cjs/react-dom.development.js:21188:7)\n    at updateContainer (node_modules/react-dom/cjs/react-dom.development.js:24373:3)\n    at /Users/stella/Documents/HA/im-ha-spring-section-3/ha-section-3-client/node_modules/react-dom/cjs/react-dom.development.js:24758:7\n    at unbatchedUpdates (node_modules/react-dom/cjs/react-dom.development.js:21903:12)\n    at legacyRenderSubtreeIntoContainer (node_modules/react-dom/cjs/react-dom.development.js:24757:5)\n    at Object.render (node_modules/react-dom/cjs/react-dom.development.js:24840:10)\n    at fn (node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:488:26)\n    at /Users/stella/Documents/HA/im-ha-spring-section-3/ha-section-3-client/node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:405:37\n    at batchedUpdates$1 (node_modules/react-dom/cjs/react-dom.development.js:21856:12)\n    at Object.act (node_modules/react-dom/cjs/react-dom-test-utils.development.js:929:14)\n    at wrapAct (node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:405:13)\n    at Object.render (node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:474:16)\n    at new ReactWrapper (node_modules/enzyme/src/ReactWrapper.js:115:16)\n    at mount (node_modules/enzyme/src/mount.js:10:10)\n    at Context.<anonymous> (__tests__/client.test.js:213:23)\n    at processImmediate (node:internal/timers:464:21)",
+        "message": "handleLogout is not defined"
+      }
+    },
+    {
+      "title": "🧩 userinfo가 없다면 아무 정보도 렌더되지 않아야합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Mypage 테스트\n================\n 🧩 userinfo가 없다면 아무 정보도 렌더되지 않아야합니다.",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "stack": "ReferenceError: handleLogout is not defined\n    at Mypage (src/pages/Mypage.js:15:53)\n    at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14803:18)\n    at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17482:13)\n    at beginWork (node_modules/react-dom/cjs/react-dom.development.js:18596:16)\n    at Object.invokeGuardedCallbackImpl (node_modules/react-dom/cjs/react-dom.development.js:113:10)\n    at invokeGuardedCallback (node_modules/react-dom/cjs/react-dom.development.js:292:31)\n    at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23203:7)\n    at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22157:12)\n    at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22130:22)\n    at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:21756:9)\n    at scheduleUpdateOnFiber (node_modules/react-dom/cjs/react-dom.development.js:21188:7)\n    at updateContainer (node_modules/react-dom/cjs/react-dom.development.js:24373:3)\n    at /Users/stella/Documents/HA/im-ha-spring-section-3/ha-section-3-client/node_modules/react-dom/cjs/react-dom.development.js:24758:7\n    at unbatchedUpdates (node_modules/react-dom/cjs/react-dom.development.js:21903:12)\n    at legacyRenderSubtreeIntoContainer (node_modules/react-dom/cjs/react-dom.development.js:24757:5)\n    at Object.render (node_modules/react-dom/cjs/react-dom.development.js:24840:10)\n    at fn (node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:488:26)\n    at /Users/stella/Documents/HA/im-ha-spring-section-3/ha-section-3-client/node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:405:37\n    at batchedUpdates$1 (node_modules/react-dom/cjs/react-dom.development.js:21856:12)\n    at Object.act (node_modules/react-dom/cjs/react-dom-test-utils.development.js:929:14)\n    at wrapAct (node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:405:13)\n    at Object.render (node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:474:16)\n    at new ReactWrapper (node_modules/enzyme/src/ReactWrapper.js:115:16)\n    at mount (node_modules/enzyme/src/mount.js:10:10)\n    at Context.<anonymous> (__tests__/client.test.js:224:23)\n    at processImmediate (node:internal/timers:464:21)",
+        "message": "handleLogout is not defined"
+      }
+    },
+    {
+      "title": "🧩 로그아웃 버튼에 핸들러가 props로 존재하도록 렌더되어야 합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Mypage 테스트\n================\n 🧩 로그아웃 버튼에 핸들러가 props로 존재하도록 렌더되어야 합니다.",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {
+        "stack": "ReferenceError: handleLogout is not defined\n    at Mypage (src/pages/Mypage.js:15:53)\n    at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14803:18)\n    at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17482:13)\n    at beginWork (node_modules/react-dom/cjs/react-dom.development.js:18596:16)\n    at Object.invokeGuardedCallbackImpl (node_modules/react-dom/cjs/react-dom.development.js:113:10)\n    at invokeGuardedCallback (node_modules/react-dom/cjs/react-dom.development.js:292:31)\n    at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23203:7)\n    at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22157:12)\n    at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22130:22)\n    at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:21756:9)\n    at scheduleUpdateOnFiber (node_modules/react-dom/cjs/react-dom.development.js:21188:7)\n    at updateContainer (node_modules/react-dom/cjs/react-dom.development.js:24373:3)\n    at /Users/stella/Documents/HA/im-ha-spring-section-3/ha-section-3-client/node_modules/react-dom/cjs/react-dom.development.js:24758:7\n    at unbatchedUpdates (node_modules/react-dom/cjs/react-dom.development.js:21903:12)\n    at legacyRenderSubtreeIntoContainer (node_modules/react-dom/cjs/react-dom.development.js:24757:5)\n    at Object.render (node_modules/react-dom/cjs/react-dom.development.js:24840:10)\n    at fn (node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:488:26)\n    at /Users/stella/Documents/HA/im-ha-spring-section-3/ha-section-3-client/node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:405:37\n    at batchedUpdates$1 (node_modules/react-dom/cjs/react-dom.development.js:21856:12)\n    at Object.act (node_modules/react-dom/cjs/react-dom-test-utils.development.js:929:14)\n    at wrapAct (node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:405:13)\n    at Object.render (node_modules/enzyme-adapter-react-16/src/ReactSixteenAdapter.js:474:16)\n    at new ReactWrapper (node_modules/enzyme/src/ReactWrapper.js:115:16)\n    at mount (node_modules/enzyme/src/mount.js:10:10)\n    at Context.<anonymous> (__tests__/client.test.js:233:23)\n    at processImmediate (node:internal/timers:464:21)",
+        "message": "handleLogout is not defined"
+      }
+    }
+  ],
+  "passes": [
+    {
+      "title": "🧩 유저 정보가 충분하지 않은 상태라면 POST 요청이 전송되지 않아야 합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Signup 페이지\n================\n 🧩 유저 정보가 충분하지 않은 상태라면 POST 요청이 전송되지 않아야 합니다.",
+      "duration": 4,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🧩 email 또는 password가 채워지지 않았다면 로그인 버튼 클릭 시 POST 요청이 일어나지 않아야합니다.",
+      "fullTitle": "Section 3 Hiring Assessments - Client \nℹ️  Login 테스트\n===============\n 🧩 email 또는 password가 채워지지 않았다면 로그인 버튼 클릭 시 POST 요청이 일어나지 않아야합니다.",
+      "duration": 3,
+      "currentRetry": 0,
+      "err": {}
+    }
+  ]
+}
