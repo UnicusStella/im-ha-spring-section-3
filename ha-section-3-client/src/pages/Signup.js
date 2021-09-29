@@ -4,12 +4,12 @@ import axios from 'axios';
 
 axios.defaults.withCredentials = true;
 
-export default function Signup () {
+export default function Signup() {
   const [userinfo, setuserinfo] = useState({
     email: '',
     password: '',
     username: '',
-    mobile: ''
+    mobile: '',
   });
   const [errorMessage, setErrorMessage] = useState('');
   const history = useHistory();
@@ -32,35 +32,32 @@ export default function Signup () {
         <form onSubmit={(e) => e.preventDefault()}>
           <div>
             <span>이메일</span>
-            <input type='email' onChange={handleInputValue('email')} />
+            <input type="email" onChange={handleInputValue('email')} />
           </div>
           <div>
             <span>비밀번호</span>
-            <input
-              type='password'
-              onChange={handleInputValue('password')}
-            />
+            <input type="password" onChange={handleInputValue('password')} />
           </div>
           <div>
             <span>이름</span>
-            <input type='text' onChange={handleInputValue('username')} />
+            <input type="text" onChange={handleInputValue('username')} />
           </div>
           <div>
             {' '}
             <span>전화번호</span>{' '}
-            <input type='tel' onChange={handleInputValue('mobile')} />
+            <input type="tel" onChange={handleInputValue('mobile')} />
           </div>
           <div>
-            <Link to='/login'>이미 아이디가 있으신가요?</Link>
+            <Link to="/login">이미 아이디가 있으신가요?</Link>
           </div>
           <button
-            className='btn btn-signup'
-            type='submit'
+            className="btn btn-signup"
+            type="submit"
             onClick={handleSignup}
           >
             회원가입
           </button>
-          <div className='alert-box' />
+          <div className="alert-box" />
         </form>
       </center>
     </div>

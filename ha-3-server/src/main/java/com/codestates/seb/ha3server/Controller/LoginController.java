@@ -18,9 +18,6 @@ import java.util.Map;
 @CrossOrigin("https://localhost:3000")
 public class LoginController {
 
-    private final static Long ACCESS_TIME = 15L;
-    private final static Long REFRESH_TIME = 1800L;
-
     private final LoginService loginService;
 
     @Autowired
@@ -61,8 +58,8 @@ public class LoginController {
                 return ResponseEntity.badRequest().body("invalid user");
             }
 
-//            Cookie cookie = new Cookie("refreshToken",loginService.CreateJWTToken(user, REFRESH_TIME)); // 토큰을 생성하여 쿠키를 통해 클라이언트에 전달 되어야 합니다.
-
+            Cookie cookie = new Cookie("refreshToken",loginService.CreateJWTToken(user)); // 토큰을 생성하여 쿠키를 통해 클라이언트에 전달 되어야 합니다.
+            response.addCookie(cookie);
 
             return ResponseEntity.ok().body(null); // { "message" : "ok"} 해당 JSON 데이터가 body에 전달되어야 합니다.
 
