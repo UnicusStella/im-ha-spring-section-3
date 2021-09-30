@@ -10,7 +10,7 @@ function Mypage({ userinfo, handleLogout }) {
     userinfo.email === '' ||
     userinfo.mobile === ''
   ) {
-    return null;
+    return '';
   }
   return (
     <div>
