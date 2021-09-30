@@ -12,9 +12,9 @@ function Mypage(props) {
         <div className="username">{props.username}</div>
         <div className="email">{props.email}</div>
         <div className="mobile">{props.mobile}</div>
-        <button className="btn btn-logout" onClick={handleLogout}>
-          logout
-        </button>
+        {/* <button className="btn btn-logout" onClick={handleLogout}> */}
+        {/* logout */}
+        {/* </button> */}
       </center>
     </div>
   );

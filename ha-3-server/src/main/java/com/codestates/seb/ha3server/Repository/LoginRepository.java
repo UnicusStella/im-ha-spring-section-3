@@ -55,15 +55,14 @@ public class LoginRepository {
     public void CreateServiceUser(LoginSignUp loginSignUp, Long id){
         // DB service_user 테이블에 매개변수 loginSignUp과 id에 데이터를 사용하여 유저 정보를 저장합니다.
         // TODO :
-        ServiceUser serviceUser = entityManager.find(ServiceUser.class,id);
         ServiceUser user = new ServiceUser();
         user.setId(id);
         user.setUsername(loginSignUp.getUsername());
         user.setEmail(loginSignUp.getEmail());
         user.setPassword(loginSignUp.getPassword());
         user.setMobile(loginSignUp.getMobile());
-        user.setUpdatedAt(serviceUser.getUpdatedAt());
-        user.setCreatedAt(serviceUser.getCreatedAt());
+        user.setUpdatedAt(new Date());
+        user.setCreatedAt(new Date());
         entityManager.persist(user);
 
         entityManager.flush();

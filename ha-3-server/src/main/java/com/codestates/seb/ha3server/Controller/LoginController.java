@@ -31,7 +31,8 @@ public class LoginController {
         // loginSignUp 객체에 내용을 사용하여 DB > service_user 테이블에 유저 정보를 저장하세요.
         // TODO :
 
-        if (false){ // loginSignUp 객체 내에 모든 필드 값이 null이 아닌지 체크해야합니다.
+        if (loginSignUp.getEmail() == null || loginSignUp.getPassword() == null || loginSignUp.getMobile() == null ||
+        loginSignUp.getUsername() == null){ // loginSignUp 객체 내에 모든 필드 값이 null이 아닌지 체크해야합니다.
             return ResponseEntity.badRequest().body("insufficient parameters supplied");
         }
 
@@ -40,7 +41,7 @@ public class LoginController {
             return ResponseEntity.badRequest().body("email exists");
         }
 
-        Cookie cookie = new Cookie("refreshToken",loginService.CreateJWTToken(user)); // jwt 토큰을 생성하여 쿠키를 통해 클라이언트에 전달해야 합니다. (cookie key -> "jwt")
+        Cookie cookie = new Cookie("jwt",loginService.CreateJWTToken(user)); // jwt 토큰을 생성하여 쿠키를 통해 클라이언트에 전달해야 합니다. (cookie key -> "jwt")
 
         response.addCookie(cookie);
 
@@ -62,7 +63,7 @@ public class LoginController {
                 return ResponseEntity.badRequest().body("invalid user");
             }
 
-            Cookie cookie = new Cookie("refreshToken",loginService.CreateJWTToken(user)); // 토큰을 생성하여 쿠키를 통해 클라이언트에 전달 되어야 합니다.
+            Cookie cookie = new Cookie("jwt",loginService.CreateJWTToken(user)); // 토큰을 생성하여 쿠키를 통해 클라이언트에 전달 되어야 합니다.
             response.addCookie(cookie);
 
             return ResponseEntity.ok().body(new HashMap<>(){{
@@ -79,9 +80,8 @@ public class LoginController {
         // 유저 로그아웃 기능을 수행하는 메소드입니다.
         // 해당 요청이 들어 왔을 시, 클라이언트에 jwt 키 값을 가진 쿠키가 제거 되어야합니다.
         // TODO :
-        Cookie cookie = new Cookie("delete",null);
+        Cookie cookie = new Cookie("jwt",null);
         cookie.setMaxAge(0);
-        cookie.setPath("/");
 
         response.addCookie(cookie);
 
@@ -97,7 +97,7 @@ public class LoginController {
         String cookiesResult = "";
         try{
             for (Cookie i : cookies){
-                if (i.getName().equals("refreshToken")){
+                if (i.getName().equals("jwt")){
                     cookiesResult = i.getValue();
                 }
             }
