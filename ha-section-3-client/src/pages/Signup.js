@@ -36,6 +36,7 @@ export default function Signup() {
         username: userinfo.username,
         mobile: userinfo.mobile,
       });
+      history.push('/');
     } else {
       setErrorMessage('모든 항목은 필수입니다');
     }

@@ -3,18 +3,25 @@ import axios from 'axios';
 
 axios.defaults.withCredentials = true;
 
-function Mypage(props) {
+function Mypage({ userinfo, handleLogout }) {
   /* TODO : props로 받은 유저정보를 화면에 표시하세요. */
+  if (
+    userinfo.username === '' ||
+    userinfo.email === '' ||
+    userinfo.mobile === ''
+  ) {
+    return null;
+  }
   return (
     <div>
       <center>
         <h1>Mypage</h1>
-        <div className="username">{props.username}</div>
-        <div className="email">{props.email}</div>
-        <div className="mobile">{props.mobile}</div>
-        {/* <button className="btn btn-logout" onClick={handleLogout}> */}
-        {/* logout */}
-        {/* </button> */}
+        <div className="username">{userinfo.username}</div>
+        <div className="email">{userinfo.email}</div>
+        <div className="mobile">{userinfo.mobile}</div>
+        <button className="btn btn-logout" onClick={handleLogout}>
+          logout
+        </button>
       </center>
     </div>
   );

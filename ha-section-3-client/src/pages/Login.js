@@ -16,9 +16,16 @@ export default function Login({ handleResponseSuccess }) {
   const handleLogin = () => {
     // TODO : 서버에 로그인을 요청하고, props로 전달된 callback을 호출합니다.
     // TODO : 이메일 및 비밀번호를 입력하지 않았을 경우 에러를 표시해야 합니다.
-    if (loginInfo.email !== null || loginInfo.password !== null) {
+    if (loginInfo.email !== '' && loginInfo.password !== '') {
+      axios
+        .post('https://localhost:4000/signin', {
+          email: loginInfo.email,
+          password: loginInfo.password,
+        })
+        .then(handleResponseSuccess);
+    } else {
+      setErrorMessage('이메일과 비밀번호를 입력하세요');
     }
-    handleResponseSuccess();
   };
   return (
     <div>
@@ -39,7 +46,7 @@ export default function Login({ handleResponseSuccess }) {
           <button className="btn btn-login" type="submit" onClick={handleLogin}>
             로그인
           </button>
-          <div className="alert-box" />
+          <div className="alert-box">{errorMessage}</div>
         </form>
       </center>
     </div>
