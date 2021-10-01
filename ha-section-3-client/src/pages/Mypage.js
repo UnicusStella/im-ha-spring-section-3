@@ -5,7 +5,7 @@ axios.defaults.withCredentials = true;
 
 function Mypage({ userinfo, handleLogout }) {
   /* TODO : props로 받은 유저정보를 화면에 표시하세요. */
-  if (userinfo === undefined) {
+  if (userinfo === null) {
     return null;
   } else {
     return (
