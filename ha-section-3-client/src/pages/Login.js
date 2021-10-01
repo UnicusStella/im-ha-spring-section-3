@@ -22,7 +22,9 @@ export default function Login({ handleResponseSuccess }) {
           email: loginInfo.email,
           password: loginInfo.password,
         })
-        .then(handleResponseSuccess);
+        .then(() => {
+          handleResponseSuccess();
+        });
     } else {
       setErrorMessage('이메일과 비밀번호를 입력하세요');
     }

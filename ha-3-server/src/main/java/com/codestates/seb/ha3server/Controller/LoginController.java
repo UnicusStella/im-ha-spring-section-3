@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@CrossOrigin("https://localhost:3000")
+@CrossOrigin(origins = "https://localhost:3000", allowedHeaders = "*", allowCredentials = "true")
 public class LoginController {
 
     private final LoginService loginService;
@@ -103,7 +103,6 @@ public class LoginController {
             }
 
             // 쿠키에 키 값이 "jwt"인 쿠키에 값을 찾아냅니다.
-
 
         }catch (NullPointerException e){
             return ResponseEntity.badRequest().body(new HashMap<>(){{
