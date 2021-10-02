@@ -30,7 +30,7 @@ export default function App() {
   };
   const handleLogout = () => {
     axios.post('https://localhost:4000/signout').then((res) => {
-      setUserinfo(null);
+      setUserinfo(undefined);
       setIsLogin(false);
       history.push('/');
     });
